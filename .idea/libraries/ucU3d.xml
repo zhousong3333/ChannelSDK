@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ucU3d">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/uc/libs/ucU3d.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

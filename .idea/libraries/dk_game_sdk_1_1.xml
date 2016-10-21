@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="dk_game_sdk_1_1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/baidu/libs/dk_game_sdk_1_1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

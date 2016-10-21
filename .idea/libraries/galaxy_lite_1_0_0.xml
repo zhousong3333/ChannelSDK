@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="galaxy-lite-1.0.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/baidu/libs/galaxy-lite-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

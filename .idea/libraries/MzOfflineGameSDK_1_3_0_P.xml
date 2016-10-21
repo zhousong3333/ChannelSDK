@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MzOfflineGameSDK_1.3.0_P">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/meizu/libs/MzOfflineGameSDK_1.3.0_P.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

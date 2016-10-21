@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile files('libs/bugly.jar')
+    compile files('libs/buglyagent.jar')
+    compile files('libs/classes.jar')
+    compile files('libs/gangaonlinehelper.jar')
+    compile files('libs/gangaonlineyijie.jar')
+}
+
+task deleteJar(type:Delete){
+    delete "libs/splashactivity.jar"
+}
+
+task createJar(type:Copy){
+    from("build/intermediates/bundles/release/")
+    into("libs/")
+    include("classes.jar")
+    rename("classes.jar","splashactivity.jar")
+}
+
+createJar.dependsOn(deleteJar,build)

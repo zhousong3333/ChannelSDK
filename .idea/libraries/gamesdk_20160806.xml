@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gamesdk-20160806">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/oppo/libs/gamesdk-20160806.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

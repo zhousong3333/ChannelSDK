@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="android_api_game_1_1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/baidu/libs/android_api_game_1_1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

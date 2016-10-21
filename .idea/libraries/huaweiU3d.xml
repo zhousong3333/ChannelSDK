@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="huaweiU3d">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/huawei/libs/huaweiU3d.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    provided fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile files('libs/classes.jar')
+    compile files('libs/alipaySingle-20160428.jar')
+    provided files('libs/ugpsdk-proguard4.1.4-release20160607.jar')
+    compile files('libs/UCGameSaSdk-1.7.1.jar')
+    compile files('libs/ipaynow_plugin_phone_onlywechat_v1.3.1.jar')
+}
+
+
+task deleteJar(type: Delete) {
+    delete 'libs/ucU3d.jar'
+}
+
+task createJar(type: Copy){
+    from('build/intermediates/bundles/release/')
+    into('libs')
+    include('classes.jar')
+    rename('classes.jar', 'ucU3d.jar')
+}
+
+createJar.dependsOn(deleteJar, build)

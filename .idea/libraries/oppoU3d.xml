@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="oppoU3d">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/oppo/libs/oppoU3d.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

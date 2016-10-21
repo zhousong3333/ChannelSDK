@@ -1,0 +1,113 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skysoul.MR.huawei"
+
+        android:versionCode="70101301"
+        android:versionName="7.1.1.301" >
+
+        <uses-sdk
+            android:minSdkVersion="8"
+            android:targetSdkVersion="20" />
+
+        <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+        <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+        <!--<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />-->
+        <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
+        <!--<uses-permission android:name="android.permission.GET_TASKS" />-->
+        <!--<uses-permission android:name="android.permission.INTERNET" />-->
+        <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
+        <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+        <!--<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
+        <!--<uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />-->
+        <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+        <!--<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />-->
+        <!--<uses-permission android:name="com.huawei.hwid.permission.ACCESS" />-->
+        <!--<uses-permission android:name="com.huawei.appmarket.provider.readPermission" />-->
+        <!--<uses-permission android:name="android.permission.VIBRATE" />-->
+
+        <!--<application-->
+            <!--android:allowBackup="false"-->
+            <!--android:label="@string/app_name">-->
+            <!--<activity-->
+                <!--android:name="com.skysoul.MR.huawei.MainActivity"-->
+                <!--android:configChanges="orientation|screenSize"-->
+                <!--android:launchMode="singleTask"-->
+                <!--android:screenOrientation="landscape">-->
+                <!--<intent-filter>-->
+                    <!--<action android:name="android.intent.action.MAIN" />-->
+
+                    <!--<category android:name="android.intent.category.LAUNCHER" />-->
+                <!--</intent-filter>-->
+            <!--</activity>-->
+            <!--<activity-->
+                <!--android:name="com.skysoul.MR.huawei.GameActivity"-->
+                <!--android:configChanges="orientation|screenSize"-->
+                <!--android:label="@string/title_activity_game">-->
+            <!--</activity>-->
+            <!--<activity-->
+                <!--android:name="com.skysoul.MR.huawei.ConsoleActivity"-->
+                <!--android:configChanges="orientation|screenSize"-->
+                <!--android:screenOrientation="portrait"-->
+                <!--android:label="@string/title_activity_console">-->
+
+            <!--</activity>-->
+
+        <!--&lt;!&ndash;&lt;!&ndash; 浮标依赖的Activity声明，建议将此Activity的屏幕方向与应用的屏幕方向设置为&ndash;&gt; &ndash;&gt;-->
+            <!--<activity-->
+                <!--android:name="com.huawei.gameservice.sdk.view.dialog.NoticeActivity"-->
+                <!--android:configChanges="orientation|screenSize"-->
+                <!--android:exported="false"-->
+                <!--android:theme="@style/buoy_baseDialog"/>-->
+            <!--<activity-->
+                <!--android:name="com.huawei.gameservice.sdk.view.dialog.UpdateActivity"-->
+                <!--android:configChanges="orientation|screenSize"-->
+                <!--android:exported="false"-->
+                <!--android:theme="@style/buoy_baseDialog"/>-->
+
+            <!--<activity-->
+                <!--android:name="com.huawei.gameservice.sdk.view.dialog.BaseDialogActivity"-->
+                <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+                <!--android:exported="false"-->
+                <!--android:theme="@style/buoy_baseDialog" >-->
+            <!--</activity>-->
+
+            <!--<activity-->
+                <!--android:name="com.huawei.gameservice.sdk.view.dialog.DownloadProgressDialogActivity"-->
+                <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+                <!--android:exported="false"-->
+                <!--android:theme="@style/buoy_baseDialog" >-->
+            <!--</activity>-->
+
+            <!--<activity-->
+                <!--android:name="com.huawei.gameservice.sdk.view.SplashImageActivity"-->
+                <!--android:exported="false">-->
+            <!--</activity>-->
+
+            <!--<activity-->
+                <!--android:name="com.huawei.gameservice.sdk.view.DummyActivity"-->
+                <!--android:exported="false"-->
+                <!--android:theme="@style/buoy_baseDialog" >-->
+            <!--</activity>-->
+
+        <!--&lt;!&ndash;&lt;!&ndash; 注意：这个在targetSDK=N时，在游戏中必须申明，否则影响N版本下使用SDK安装华为游戏&ndash;&gt; &ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; 其中android:authorities里“游戏包名”必须要替换为游戏自己包名，否则会导致冲突，游戏无法&ndash;&gt; &ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash; 详细说明请参考SDK接&ndash;&gt; &ndash;&gt;-->
+            <!--<provider-->
+                <!--android:name="android.support.v4.content.FileProvider"-->
+                <!--android:authorities="com.huawei.gb.huawei.installnewtype.provider"-->
+                <!--android:exported="false"-->
+                <!--android:grantUriPermissions="true" >-->
+                <!--<meta-data-->
+                    <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                    <!--android:resource="@xml/buoy_provider_paths" />-->
+            <!--</provider>-->
+
+        <!--&lt;!&ndash;&lt;!&ndash; 浮标中下载依赖&ndash;&gt; &ndash;&gt;-->
+            <!--<receiver android:name="com.huawei.gameservice.sdk.service.download.DownloadBroadcastReceiver" >-->
+                <!--<intent-filter>-->
+                    <!--<action android:name="android.intent.action.DOWNLOAD_COMPLETE" />-->
+                    <!--<action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED" />-->
+                <!--</intent-filter>-->
+            <!--</receiver>-->
+        <!--</application>-->
+
+    </manifest>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="unitynotification">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/unitynotification.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

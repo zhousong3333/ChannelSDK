@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Meta" />
+            <option value="$PROJECT_DIR$/Mumayi" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/baidu" />
+            <option value="$PROJECT_DIR$/ewan" />
+            <option value="$PROJECT_DIR$/huawei" />
+            <option value="$PROJECT_DIR$/iqiyi" />
+            <option value="$PROJECT_DIR$/meizu" />
+            <option value="$PROJECT_DIR$/mrutility" />
+            <option value="$PROJECT_DIR$/oppo" />
+            <option value="$PROJECT_DIR$/sdkbase" />
+            <option value="$PROJECT_DIR$/uc" />
+            <option value="$PROJECT_DIR$/unitysplash" />
+            <option value="$PROJECT_DIR$/yijieonline" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Meta" />
+            <option value="$PROJECT_DIR$/Mumayi" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/baidu" />
+            <option value="$PROJECT_DIR$/ewan" />
+            <option value="$PROJECT_DIR$/huawei" />
+            <option value="$PROJECT_DIR$/iqiyi" />
+            <option value="$PROJECT_DIR$/meizu" />
+            <option value="$PROJECT_DIR$/mrutility" />
+            <option value="$PROJECT_DIR$/oppo" />
+            <option value="$PROJECT_DIR$/sdkbase" />
+            <option value="$PROJECT_DIR$/uc" />
+            <option value="$PROJECT_DIR$/unitysplash" />
+            <option value="$PROJECT_DIR$/yijieonline" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

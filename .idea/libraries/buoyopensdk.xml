@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="buoyopensdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/huawei/libs/buoyopensdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

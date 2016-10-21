@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="splashactivity">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Meta/libs/splashactivity.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

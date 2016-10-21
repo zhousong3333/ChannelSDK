@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ugpsdk-proguard4.1.4-release20160607">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/uc/libs/ugpsdk-proguard4.1.4-release20160607.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CloudUpdate_SDK_1.1.18">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/huawei/libs/CloudUpdate_SDK_1.1.18.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

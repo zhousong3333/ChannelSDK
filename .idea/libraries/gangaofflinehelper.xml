@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gangaofflinehelper">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Meta/libs/gangaofflinehelper.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

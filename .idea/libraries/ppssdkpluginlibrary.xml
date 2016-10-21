@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ppssdkpluginlibrary">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/iqiyi/libs/ppssdkpluginlibrary.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

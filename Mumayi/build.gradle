@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+}
+
+dependencies {
+    provided fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    provided files('libs/PayCenterPro.jar')
+    compile files('libs/classes.jar')
+}
+
+//task deleteJar(type:Delete){
+//    delete "libs/mumayiU3d.jar"
+//}
+//
+//task createJar(type:Copy){
+//    from("build/intermediates/bundles/release/")
+//    into("libs/")
+//    include("classes.jar")
+//    rename("classes.jar","mumayiU3d.jar")
+//}
+//
+//createJar.dependsOn(deleteJar,build)

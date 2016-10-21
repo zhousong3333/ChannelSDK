@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ewanU3d">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ewan/libs/ewanU3d.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

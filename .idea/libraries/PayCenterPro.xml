@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PayCenterPro">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Mumayi/libs/PayCenterPro.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

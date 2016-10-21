@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="IHuaweipay">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/huawei/libs/IHuaweipay.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
