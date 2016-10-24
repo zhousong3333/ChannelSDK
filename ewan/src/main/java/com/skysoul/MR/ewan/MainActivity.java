@@ -1,6 +1,5 @@
 package com.skysoul.MR.ewan;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -8,14 +7,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
 
+import com.skysoul.MR.SDKBaseActivity;
 import com.unity3d.player.UnityPlayer;
-import com.unity3d.player.UnityPlayerActivity;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,9 +34,7 @@ import cn.ewan.supersdk.open.SuperShareListener;
 /**
  * Created by yangpeng on 16/9/7.
  */
-public class MainActivity extends UnityPlayerActivity {
-
-    private String UnityGameObject = "Main Camera";
+public class MainActivity extends SDKBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -48,25 +42,8 @@ public class MainActivity extends UnityPlayerActivity {
         super.onCreate(savedInstanceState);
         SuperPlatform.getInstance().onCreate(this);
     }
-
-    private void showToast(final String msg)
-    {
-        runOnUiThread(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_LONG).show();
-            }
-        });
-    }
     /*
-    向Unity发送消息
-     */
-    private void UnitySend(String method, String message)
-    {
-        UnityPlayer.UnitySendMessage(UnityGameObject,method,message);
-    }
+
     /**
      * 初始化SDK
      */
@@ -78,7 +55,6 @@ public class MainActivity extends UnityPlayerActivity {
         info.setSignKey(signKey);// 申请的客户端签名key S223423B4rLzby5Fl
         info.setPacketid(packetid);// 包id 10000
         UnityGameObject = obj;
-
         /**
          * 初始化接口
          */
@@ -103,7 +79,7 @@ public class MainActivity extends UnityPlayerActivity {
     /**
      * 调用益玩的登入接口
      */
-    private void Login()
+    public void login()
     {
         SuperPlatform.getInstance().login(MainActivity.this, new SuperLoginListener()
         {
@@ -123,7 +99,7 @@ public class MainActivity extends UnityPlayerActivity {
                 map.put("username",username);
                 JSONObject json = new JSONObject(map);
                 String message = json.toString();
-                UnitySend("LoginResult",message);
+                UnitySendMessage("LoginResult",message);
 
                 String message1 = map.toString();
                 Log.i("zhousong","map's string : " + message1);
@@ -134,7 +110,7 @@ public class MainActivity extends UnityPlayerActivity {
             {
                 //正常登入失败的回调
                 showToast("登入失败\n" + "\nmsg = " + msg);
-                UnitySend("LoginResult","fail");
+                UnitySendMessage("LoginResult","fail");
             }
             @Override
             public void onLoginCancel()
@@ -145,15 +121,15 @@ public class MainActivity extends UnityPlayerActivity {
             public void onNoticeGameToSwitchAccount()
             {
                 //游戏弹出登入页面
-//                showToast("游戏弹出登入页面");
-                UnitySend("GameToSwitchAccount","");
+//                ShowToast("游戏弹出登入页面");
+                UnitySendMessage("GameToSwitchAccount","");
             }
             @Override
             public void onSwitchAccountSuccess(SuperLogin login)
             {
                 // TODO 自动生成的方法存根
                 //切换帐号成功的回调
-//                showToast("切换帐号成功\n先释放旧角色，再重新加载游戏角色！");
+//                ShowToast("切换帐号成功\n先释放旧角色，再重新加载游戏角色！");
                 //开始重新加载数据角色
                 //先做旧角色释放工作
                 Log.i("", "切换成功");
@@ -165,7 +141,7 @@ public class MainActivity extends UnityPlayerActivity {
                 map.put("username",login.getUsername());
                 JSONObject json = new JSONObject(map);
                 String message = json.toString();
-                UnitySend("SwitchAccountSuccess",message);
+                UnitySendMessage("SwitchAccountSuccess",message);
 
             }
         });
@@ -188,9 +164,6 @@ public class MainActivity extends UnityPlayerActivity {
             showToast("支付金额有误！");
             return;
         }
-
-
-
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -224,19 +197,19 @@ public class MainActivity extends UnityPlayerActivity {
                         @Override
                         public void onComplete() {
                             showToast("支付成功！");
-                            UnitySend("PayResult", "success");
+                            UnitySendMessage("PayResult", "success");
                         }
 
                         @Override
                         public void onCancel() {
                             showToast("支付取消！");
-                            UnitySend("PayResult", "cancel");
+                            UnitySendMessage("PayResult", "cancel");
                         }
 
                         @Override
                         public void onFail(String msg) {
                             showToast("支付失败！");
-                            UnitySend("PayResult", "fail");
+                            UnitySendMessage("PayResult", "fail");
                         }
                     });
                 }
@@ -478,7 +451,7 @@ public class MainActivity extends UnityPlayerActivity {
     private void logout()
     {
 //        onBackPressedCancel();
-        UnitySend("LogoutResult","");
+        UnitySendMessage("LogoutResult","");
     }
 
     @Override

@@ -13,6 +13,7 @@ import com.nearme.game.sdk.common.model.biz.ReportUserGameInfoParam;
 import com.nearme.game.sdk.common.model.biz.ReqUserInfoParam;
 import com.nearme.game.sdk.common.util.AppUtil;
 import com.nearme.platform.opensdk.pay.PayResponse;
+import com.skysoul.MR.SDKBaseActivity;
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
 
@@ -25,9 +26,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-public class MainActivity extends UnityPlayerActivity {
-	public static final String TAG = "zhousong";
-	private String UnityGameObject = "Main Camera";
+public class MainActivity extends SDKBaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -36,34 +35,29 @@ public class MainActivity extends UnityPlayerActivity {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	}
-	/*
-向Unity发送消息
- */
-	private void UnitySend(String method, String message)
+
+	@Override
+	protected void Login()
 	{
-		UnityPlayer.UnitySendMessage(UnityGameObject,method,message);
-		Log.d(TAG, message);
-	}
-	public void Init(String objName){
-		UnityGameObject = objName;
-	}
-	public void Login() {
 		sdkDoLoign();
 	}
 
-	public void Pay(String price,String Name,String Desc,String orderId) {
-		doPay(price, Name, Desc, orderId);
+	@Override
+	protected void Pay(String message)
+	{
+//		JSONObject json = new JSONObject(message);
+//		json.getString("price");
+//		doPay(price, Name, Desc, orderId);
 	}
 
-	public void GetTokenAndSsoid() {
-		doGetTokenAndSsoid();
+	@Override
+	protected void Logout()
+	{
+		Logout();
 	}
 
-	public void SendRoleInfo(String gameId, String service, String role, String grade) {
-		sendRoleInfo(gameId, service, role, grade);
-	}
-
-	public void ExitGame()
+	@Override
+	public void Exit()
 	{
 		GameCenterSDK.getInstance().onExit(MainActivity.this,
 				new GameExitCallback() {
@@ -77,7 +71,13 @@ public class MainActivity extends UnityPlayerActivity {
 				});
 	}
 
+	public void GetTokenAndSsoid() {
+		doGetTokenAndSsoid();
+	}
 
+	public void SendRoleInfo(String gameId, String service, String role, String grade) {
+		sendRoleInfo(gameId, service, role, grade);
+	}
 	@SuppressLint("InflateParams")
 	private void sendRoleInfo(String gameId, String service, String role, String grade) {
 		GameCenterSDK.getInstance().doReportUserGameInfoData(
@@ -85,14 +85,14 @@ public class MainActivity extends UnityPlayerActivity {
 
 					@Override
 					public void onSuccess(String resultMsg) {
-						Toast.makeText(MainActivity.this, "success",
-								Toast.LENGTH_LONG).show();
+//						Toast.makeText(MainActivity.this, "success",
+//								Toast.LENGTH_LONG).show();
 					}
 
 					@Override
 					public void onFailure(String resultMsg, int resultCode) {
-						Toast.makeText(MainActivity.this, resultMsg,
-								Toast.LENGTH_LONG).show();
+//						Toast.makeText(MainActivity.this, resultMsg,
+//								Toast.LENGTH_LONG).show();
 					}
 				});
 	}
@@ -102,17 +102,17 @@ public class MainActivity extends UnityPlayerActivity {
 
 			@Override
 			public void onSuccess(String resultMsg) {
-				Toast.makeText(MainActivity.this, resultMsg, Toast.LENGTH_LONG)
-						.show();
+//				Toast.makeText(MainActivity.this, resultMsg, Toast.LENGTH_LONG)
+//						.show();
 //				UnitySend("LoginResult","success");
 				GetTokenAndSsoid();
 			}
 
 			@Override
 			public void onFailure(String resultMsg, int resultCode) {
-				Toast.makeText(MainActivity.this, resultMsg, Toast.LENGTH_LONG)
-						.show();
-				UnitySend("LoginResult","fail");
+//				Toast.makeText(MainActivity.this, resultMsg, Toast.LENGTH_LONG)
+//						.show();
+				LoginResult("fail");
 			}
 		});
 	}
@@ -133,22 +133,25 @@ public class MainActivity extends UnityPlayerActivity {
 
 			@Override
 			public void onSuccess(String resultMsg) {
-				Toast.makeText(MainActivity.this, "支付成功", Toast.LENGTH_SHORT)
-						.show();
-				UnitySend("PayResult","success");
+//				Toast.makeText(MainActivity.this, "支付成功", Toast.LENGTH_SHORT)
+//						.show();
+//				UnitySend("PayResult","success");
+				PayResult(CODE_SUCCESS);
 			}
 
 			@Override
 			public void onFailure(String resultMsg, int resultCode) {
 				if (PayResponse.CODE_CANCEL != resultCode) {
-					Toast.makeText(MainActivity.this, "支付失败",
-							Toast.LENGTH_SHORT).show();
-					UnitySend("PayResult","fail");
+//					Toast.makeText(MainActivity.this, "支付失败",
+//							Toast.LENGTH_SHORT).show();
+//					UnitySend("PayResult","fail");
+					PayResult(CODE_FAIL);
 				} else {
 					// 取消支付处理
-					Toast.makeText(MainActivity.this, "支付取消",
-							Toast.LENGTH_SHORT).show();
-					UnitySend("PayResult","cancle");
+//					Toast.makeText(MainActivity.this, "支付取消",
+//							Toast.LENGTH_SHORT).show();
+//					UnitySend("PayResult","cancle");
+					PayResult(CODE_CANCLE);
 				}
 			}
 		});
@@ -197,7 +200,8 @@ public class MainActivity extends UnityPlayerActivity {
 							map.put("username",userName);
 							JSONObject json1 = new JSONObject(map);
 							String message = json1.toString();
-							UnitySend("LoginResult",message);
+//							UnitySend("LoginResult",message);
+							LoginResult(message);
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}

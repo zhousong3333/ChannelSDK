@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ChannelSDK.iml" filepath="$PROJECT_DIR$/ChannelSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/Meta/Meta.iml" filepath="$PROJECT_DIR$/Meta/Meta.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MonsterRally.iml" filepath="$PROJECT_DIR$/MonsterRally.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mumayi/Mumayi.iml" filepath="$PROJECT_DIR$/Mumayi/Mumayi.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baidu/baidu.iml" filepath="$PROJECT_DIR$/baidu/baidu.iml" />

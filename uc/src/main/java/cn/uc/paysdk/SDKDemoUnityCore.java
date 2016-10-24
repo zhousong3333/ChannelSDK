@@ -24,17 +24,40 @@ import cn.uc.paysdk.face.commons.SDKError;
 import cn.uc.paysdk.face.commons.SDKProtocolKeys;
 
 import com.unity3d.player.UnityPlayer;
-
+import com.skysoul.MR.SDKBaseActivity;
 /**
  * SDK main entrance.
  *
  * @author www.9Game.com
  * @date 2015-09-21
  */
-public class SDKDemoUnityCore extends UCSdkActivity {
+public class SDKDemoUnityCore extends SDKBaseActivity {
 
     private static final String TAG = "SDKUnityCore";
     private static String gameobject = "Main Camera";
+
+    @Override
+    protected void Init(String message)
+    {
+        initSDK(this,message);
+    }
+    @Override
+    protected void Login()
+    {
+        Login();
+    }
+
+    @Override
+    protected void Pay(String message)
+    {
+        Pay(message);
+    }
+
+    @Override
+    protected void Logout()
+    {
+        Logout();
+    }
 
     /**
      * 初始化支付SDK
@@ -83,7 +106,8 @@ public class SDKDemoUnityCore extends UCSdkActivity {
             switch (statuscode) {
                 case UCGameSDKStatusCode.SUCCESS: {
                     try {
-                        UnityPlayer.UnitySendMessage(gameobject, "onSDKInitSuccessful", msg);
+//                        UnityPlayer.UnitySendMessage(gameobject, "onSDKInitSuccessful", msg);
+//                        InitResult(msg);
                     } catch (Throwable e) {
                         e.printStackTrace();
                     }

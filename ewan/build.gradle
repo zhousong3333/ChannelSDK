@@ -26,9 +26,8 @@ android {
 dependencies {
     provided fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile files('/Users/yangpeng/StudioProject/MonsterRally/Meta/libs/classes.jar')
     provided files('libs/SuperSdkV213Out_20160601_1750.jar')
+    compile project(':sdkbase')
 }
 task deleteJar(type: Delete) {
     delete 'libs/ewanU3d.jar'

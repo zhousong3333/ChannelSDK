@@ -22,11 +22,11 @@ dependencies {
     provided fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
-    compile files('libs/classes.jar')
-    compile files('libs/alipaySingle-20160428.jar')
+    provided files('libs/alipaySingle-20160428.jar')
     provided files('libs/ugpsdk-proguard4.1.4-release20160607.jar')
-    compile files('libs/UCGameSaSdk-1.7.1.jar')
-    compile files('libs/ipaynow_plugin_phone_onlywechat_v1.3.1.jar')
+    provided files('libs/UCGameSaSdk-1.7.1.jar')
+    provided files('libs/ipaynow_plugin_phone_onlywechat_v1.3.1.jar')
+    compile project(':sdkbase')
 }
 
 
